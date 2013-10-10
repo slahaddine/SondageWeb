@@ -4,8 +4,12 @@
  */
 package org.sondage.controleur;
 
+import org.sondage.modele.Connexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +37,12 @@ public class Login extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ClassNotFoundException {
         String username = request.getParameter("username"), password = request.getParameter("password"); 
-        UserDAO dao = new UserDAO();
+        Class.forName("com.mysql.jdbc.Driver");
+        Connexion.setUrl("jdbc:mysql://localhost/sondageweb?user=root");
+        Connection con = Connexion.getInstance();
+        UserDAO dao = new UserDAO(con);
         if (dao.connexion(username, password)){
            // User user = dao.find(username); 
             HttpSession session = request.getSession(); 
@@ -61,7 +68,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -76,7 +87,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
