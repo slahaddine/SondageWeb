@@ -35,7 +35,7 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username = request.getParameter("username"), password = request.getParameter("password"); 
-        UserDAO dao = new UserDAO(); 
+        UserDAO dao = new UserDAO();
         if (dao.connexion(username, password)){
            // User user = dao.find(username); 
             HttpSession session = request.getSession(); 
