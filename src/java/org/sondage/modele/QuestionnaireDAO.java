@@ -88,7 +88,7 @@ public class QuestionnaireDAO extends DAO<Questionnaire>{
 		try 
 		{
 			stm = cnx.createStatement(); 
-			r = stm.executeQuery("SELECT * FROM user WHERE idQuestionnaire = '"+id+"'");
+			r = stm.executeQuery("SELECT * FROM questionnaire WHERE nomQuestionnaire = '"+id+"'");
 			if (r.next())
 			{
 				Questionnaire questionnaire = new Questionnaire(Integer.parseInt(r.getString("nbQuestions")), r.getString("nomSondage"));
