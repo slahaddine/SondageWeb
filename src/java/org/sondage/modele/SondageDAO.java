@@ -58,7 +58,7 @@ public class SondageDAO extends DAO<Sondage> {
 		try 
 		{
 			stm = cnx.createStatement(); 
-			int n= stm.executeUpdate("DELETE FROM sondage WHERE nom='"+x.getNomSondage()+"'");
+			int n= stm.executeUpdate("DELETE FROM sondage WHERE idsondage='"+x.getIdSondage()+"'");
 			if (n>0)
 			{
 				stm.close();
@@ -123,7 +123,7 @@ public class SondageDAO extends DAO<Sondage> {
 		try 
 		{
 			String req = "UPDATE sondage SET NOM = '"+x.getNomSondage()+
-							" WHERE NOM = '"+x.getNomSondage()+"'";
+							" WHERE IDSONDAGE = '"+x.getIdSondage()+"'";
 			//System.out.println("REQUETE "+req);
 			stm = cnx.createStatement(); 
 			int n= stm.executeUpdate(req);
@@ -160,6 +160,7 @@ public class SondageDAO extends DAO<Sondage> {
 			while (r.next())
 			{
 				Sondage s = new Sondage(r.getString("nom"));
+                                s.setIdSondage(Integer.getInteger(r.getString("idsondage")));
 				liste.add(s);
 			}
 			r.close();
