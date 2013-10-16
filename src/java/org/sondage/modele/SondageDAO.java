@@ -93,6 +93,7 @@ public class SondageDAO extends DAO<Sondage> {
 			if (r.next())
 			{
 				Sondage s = new Sondage(r.getString("nom"));
+                                s.setIdSondage(Integer.parseInt(r.getString("idsondage")));
 				r.close();
 				stm.close();
 				return s;
