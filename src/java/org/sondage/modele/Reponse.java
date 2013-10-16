@@ -11,7 +11,7 @@ package org.sondage.modele;
 public class Reponse {
     String nomReponse, texteReponse;
     boolean choisie;
-    int idQuestion; 
+    int idQuestion, idReponse; 
 
     public Reponse(String nomReponse, String texteReponse, int idQuestion) {
         this.nomReponse = nomReponse;
@@ -19,7 +19,6 @@ public class Reponse {
         this.choisie = false;
         this.idQuestion = idQuestion;
     }
-
     public String getNomReponse() {
         return nomReponse;
     }
@@ -30,6 +29,14 @@ public class Reponse {
 
     public String getTexteReponse() {
         return texteReponse;
+    }
+
+    public int getIdReponse() {
+        return idReponse;
+    }
+
+    public void setIdReponse(int idReponse) {
+        this.idReponse = idReponse;
     }
 
     public void setTexteReponse(String texteReponse) {
