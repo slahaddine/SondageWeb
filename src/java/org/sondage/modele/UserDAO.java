@@ -18,7 +18,7 @@ public class UserDAO extends DAO<User> {
 	public boolean create(User x) {
 		// TODO Auto-generated method stub
 	
-		String req = "INSERT INTO client (`USERNAME` , `PASSWORD` , `NOM` , `PRENOM` , `COURRIEL` , `VILLE`) "+
+		String req = "INSERT INTO user (`USERNAME` , `PASSWORD` , `NOM` , `PRENOM` , `COURRIEL` , `VILLE`) "+
 			     "VALUES ('"+x.getUsername()+"','"+x.getPassword()+"','"+x.getNom()+"','"+x.getPrenom()+"','"+x.getCourriel()+"','"+x.getVille()+"')";
 
 		//System.out.println("REQUETE "+req);
