@@ -43,40 +43,59 @@
                             <div style="clear: both;">&nbsp;</div>
                         </div>
                         <!-- end #content -->
-                        <div id="connexion">           
+                        <div id="connexion" style="float: left;">           
 
                             <table>
                                 <form action="controleur.do" method="POST">
-                                    <br />
 
-                                    <p>
-                                        Username :     
-                                        <input type="text" name="username"/>
-                                    </p>
-                                    <p>
-                                        Password&nbsp;:&nbsp;    
-                                        <input type="password" name="password"/>
-                                    </p>
-                                    <p>
-                                        Email&nbsp;:&nbsp;      
-                                        <input type="text" name="username"/>
-                                    </p>
-                                    <p>
-                                        Name &nbsp;:&nbsp;  
-                                        <input type="password" name="password"/>
-                                    </p>
-                                    <p>
-                                        Firstname :     
-                                        <input type="text" name="username"/>
-                                    </p>
-                                    Password&nbsp;:&nbsp;    
-                                    <input type="password" name="password"/>
-                                    </p>
+                                    <tr>
+                                        <td> 
+                                            Username :     
+                                        </td>
+                                        <td> 
+                                            <input type="text" name="username"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Password&nbsp;:&nbsp;    
+                                        </td>
+                                        <td>
+                                            <input type="password" name="password"/>
+                                        </td>
+                                    </tr>
+                                    <tr> 
+                                        <td>
+                                            Email&nbsp;:&nbsp;      
+                                        </td>
+                                        <td> 
+                                            <input type="text" name="username"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Name &nbsp;:&nbsp;  
+                                        </td>
+                                        <td> 
+                                            <input type="password" name="password"/>
+                                        </td>
+                                    <tr>
+                                        <td>
+                                            Firstname :     
+                                        </td>
+                                        <td> 
+                                            <input type="text" name="username"/>
+                                        </td>
+                                    </tr>
                                     <input type="hidden" name="register" value="register"/>
-                                    <input type="submit" value="S'inscrire"/>
-
+                                    <tr>
+                                        <td>
+                                            <input type="submit" value="S'inscrire"/>
+                                        </td>
+                                    </tr>
                                 </form>
                             </table>
+
 
                         </div>
                         <!-- end #sidebar -->
