@@ -1,13 +1,10 @@
 <div id="page-bgbtm">
-    <div id="content">
 
-        <div style="clear: both;">&nbsp;</div>
-    </div>
     <!-- end #content -->
     <div id="connexion" style="float: left;">           
 
-        <table>
-            <form action="controleur.do" method="POST">
+        <form action="controleur.do" method="POST">
+            <table>
 
                 <tr>
                     <td> 
@@ -40,6 +37,7 @@
                     <td> 
                         <input type="text" name="name"/>
                     </td>
+                </tr>
                 <tr>
                     <td>
                         Firstname :     
@@ -54,9 +52,8 @@
                         <input type="submit" value="S'inscrire"/>
                     </td>
                 </tr>
-            </form>
-        </table>
-
+            </table>
+        </form>
 
     </div>
     <!-- end #sidebar -->
