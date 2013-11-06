@@ -6,10 +6,17 @@ package org.sondage.controleur;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.sondage.modele.Connexion;
+import org.sondage.modele.User;
+import org.sondage.modele.UserDAO;
 
 /**
  *
@@ -29,6 +36,26 @@ public class Inscription extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String username = request.getParameter("username"), password = request.getParameter("password"),
+                          email = request.getParameter("email"), name = request.getParameter("name"), 
+                          firstName = request.getParameter("firstname");
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connexion.setUrl("jdbc:mysql://localhost/sondageweb?user=root");
+            Connection con = Connexion.getInstance();
+            UserDAO dao = new UserDAO(con);
+            if(dao.create(new User(username, password, name, firstName, email, "Montreal"))){
+                
+            }else{
+                
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Inscription.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            
+        RequestDispatcher rs = this.getServletContext().getRequestDispatcher("/index.jsp"); 
+        rs.forward(request, response);
+        }
         
     }
 

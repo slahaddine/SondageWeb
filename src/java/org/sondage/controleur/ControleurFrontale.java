@@ -30,11 +30,19 @@ public class ControleurFrontale extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       if (request.getParameter("login").equals("login")){
+       if (request.getParameter("login") != null && request.getParameter("login").equals("login")){
            String username = request.getParameter("username"), password = request.getParameter("password"); 
            RequestDispatcher rs = this.getServletContext().getNamedDispatcher("Login"); 
            request.setAttribute("username", username);
            request.setAttribute("password", password);
+           rs.forward(request, response);
+       }else if(request.getParameter("register") != null && request.getParameter("register").contentEquals("register")){
+           RequestDispatcher rs = this.getServletContext().getNamedDispatcher("Inscription");
+           request.setAttribute("username", request.getParameter("username"));
+           request.setAttribute("password", request.getParameter("password"));
+           request.setAttribute("email", request.getParameter("email"));
+           request.setAttribute("name", request.getParameter("name"));
+           request.setAttribute("firstname", request.getParameter("firstname"));
            rs.forward(request, response);
        }
     }
