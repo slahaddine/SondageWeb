@@ -30,7 +30,7 @@
                         Email&nbsp;:&nbsp;      
                     </td>
                     <td> 
-                        <input type="text" name="username"/>
+                        <input type="text" name="email"/>
                     </td>
                 </tr>
                 <tr>
@@ -38,14 +38,14 @@
                         Name &nbsp;:&nbsp;  
                     </td>
                     <td> 
-                        <input type="password" name="password"/>
+                        <input type="text" name="name"/>
                     </td>
                 <tr>
                     <td>
                         Firstname :     
                     </td>
                     <td> 
-                        <input type="text" name="username"/>
+                        <input type="text" name="firstname"/>
                     </td>
                 </tr>
                 <input type="hidden" name="register" value="register"/>
