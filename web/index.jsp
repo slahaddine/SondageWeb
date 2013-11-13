@@ -5,7 +5,6 @@
 --%>
 
 <%@page import="org.sondage.modele.User"%>
-<%@page import="org.sondage.modele.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <% 
@@ -51,7 +50,7 @@
             if(session.getAttribute("connexion") != null && session.getAttribute("connexion").toString().contentEquals("true")){
                 if(session.getAttribute("connectedUser") != null){
                     userConnected = (User) session.getAttribute("connectedUser");
-                    out.println("<p style='color:#0aabff;'> Bienvenue " + userConnected.getNom()+ " " + userConnected.getPrenom() + "</p>");
+                    out.println("<p style='color:#0a00ff;'> Bienvenue <span style='color:red;'>" + userConnected.getNom()+ " " + userConnected.getPrenom() + "</span></p>");
                 }
             }
         %>
