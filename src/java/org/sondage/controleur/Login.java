@@ -47,11 +47,13 @@ public class Login extends HttpServlet {
            // User user = dao.find(username); 
             HttpSession session = request.getSession(); 
             session.setAttribute("username", username);
-            session.setAttribute("connexion", "true"); 
+            session.setAttribute("connexion", "true");
+            session.setAttribute("connectedUser", dao.read(username));
+            
         }else{
             
         }
-        RequestDispatcher rs = this.getServletContext().getRequestDispatcher("/index.jsp"); 
+        RequestDispatcher rs = this.getServletContext().getRequestDispatcher("/index.jsp?action=1");// getRequestDispatcher("/index.jsp"); 
         rs.forward(request, response);
     }
 

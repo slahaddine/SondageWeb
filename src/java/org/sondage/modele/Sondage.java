@@ -11,9 +11,6 @@ package org.sondage.modele;
 public class Sondage {
     private String nomSondage, description, otherName;
     private int idSondage;
-    
-    
-
     public Sondage(String _nomSondage, String _description, String _otherName) {
         this.setNomSondage(_nomSondage); 
         this.setDescription(_description);

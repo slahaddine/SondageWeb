@@ -44,6 +44,13 @@ public class ControleurFrontale extends HttpServlet {
            request.setAttribute("name", request.getParameter("name"));
            request.setAttribute("firstname", request.getParameter("firstname"));
            rs.forward(request, response);
+       }else if(request.getParameter("sondage") != null && request.getParameter("sondage").contentEquals("sondage")){
+           RequestDispatcher rs = this.getServletContext().getNamedDispatcher("");
+           request.setAttribute("sondageName", request.getParameter("sondageName"));
+           request.setAttribute("sondageDate", request.getParameter("sondageDate"));
+           request.setAttribute("sondageDescription", request.getParameter("sondageDescription"));
+           request.setAttribute("sondageOtherName", request.getParameter("sondageOtherName"));
+           rs.forward(request, response);
        }
     }
 

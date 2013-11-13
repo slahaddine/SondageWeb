@@ -12,18 +12,37 @@ public class Questionnaire {
     private Question[] questions; 
     private int nbQuestions, currentQuestion, idQuestionnaire; 
     private String nomSondage; 
-    public Questionnaire(int nbQuestion, String _nomSondage) {
+    private String theQuestion; 
+    public Questionnaire(int nbQuestion, String _nomSondage, String _theQuestion) {
         questions = new Question[nbQuestion]; 
         currentQuestion = 0; 
         nomSondage = _nomSondage; 
+        this.nbQuestions = nbQuestion; 
+        theQuestion = _theQuestion; 
     }
+
+    public String getTheQuestion() {
+        return theQuestion;
+    }
+
+    public void setTheQuestion(String theQuestion) {
+        this.theQuestion = theQuestion;
+    }
+    
     public Question getQuestion(int i){
         if((i >= 0) && (i < nbQuestions))
             return questions[i];
         else 
             return null; 
     }
-
+    public boolean addQuestion(Question _question){
+        if (currentQuestion <= nbQuestions){
+            questions[currentQuestion] = _question;
+            currentQuestion++;
+            return true; 
+        }else 
+            return false;
+    }
     public int getIdQuestionnaire() {
         return idQuestionnaire;
     }

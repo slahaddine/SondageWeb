@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class SondageDAO extends DAO<Sondage> {
-
+    private String otherPeople = ""; 
 	public SondageDAO(Connection c)
 	{
 		super(c);
@@ -92,7 +92,7 @@ public class SondageDAO extends DAO<Sondage> {
 			r = stm.executeQuery("SELECT * FROM sondage WHERE nom = '"+id+"'");
 			if (r.next())
 			{
-				Sondage s = new Sondage(r.getString("nom"));
+				Sondage s = new Sondage(r.getString("nom"), r.getString("description"), r.getString(otherPeople));
                                 s.setIdSondage(Integer.parseInt(r.getString("idsondage")));
 				r.close();
 				stm.close();
@@ -159,7 +159,7 @@ public class SondageDAO extends DAO<Sondage> {
 			ResultSet r = stm.executeQuery("SELECT * FROM sondage");
 			while (r.next())
 			{
-				Sondage s = new Sondage(r.getString("nom"));
+				Sondage s = new Sondage(r.getString("nom"), r.getString("description"), r.getString(otherPeople));
                                 s.setIdSondage(Integer.getInteger(r.getString("idsondage")));
 				liste.add(s);
 			}

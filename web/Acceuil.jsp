@@ -1,6 +1,6 @@
 <div id="content">
     <div class="post">
-        <h2 class="title"><a href="#">Welcome to Escalate</a></h2>
+        <h2 class="title"><a href="#">Bienvenue à Sonadge Web</a></h2>
         <p class="meta">Posted by <a href="#">Someone</a> on July 08, 2013
             &nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
         <div class="entry"> <a href="#" class="image image-full"><img src="images/pics01.jpg" alt="" /></a>

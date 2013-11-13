@@ -91,7 +91,7 @@ public class QuestionnaireDAO extends DAO<Questionnaire>{
 			r = stm.executeQuery("SELECT * FROM questionnaire WHERE nomQuestionnaire = '"+id+"'");
 			if (r.next())
 			{
-				Questionnaire questionnaire = new Questionnaire(Integer.parseInt(r.getString("nbQuestions")), r.getString("nomSondage"));
+				Questionnaire questionnaire = new Questionnaire(Integer.parseInt(r.getString("nbQuestions")), r.getString("nomSondage"), "");// A faire      
 				questionnaire.setIdQuestionnaire(Integer.parseInt(r.getString("idQuestionnaire")));
                                 r.close();
 				stm.close();
@@ -159,7 +159,7 @@ public class QuestionnaireDAO extends DAO<Questionnaire>{
 			while (r.next())
 			{
 				Questionnaire u = new Questionnaire(Integer.parseInt(r.getString("nbQuestions")),
-						r.getString("nomSondage"));
+						r.getString("nomSondage"), "");
                                 u.setIdQuestionnaire(Integer.parseInt(r.getString("idQuestionnaire")));
 				liste.add(u);
 			}
