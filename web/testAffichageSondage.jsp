@@ -5,7 +5,7 @@
         hello
         <% 
             request.setAttribute("ss", "ssa");
-            pageContext.forward("asas.do");
+            pageContext.forward("asas.do ");
                     if(session.getAttribute("listSondages") != null ){
                 ArrayList<Sondage> listSondage = (ArrayList<Sondage>)session.getAttribute("listSondages"); 
                 out.print("here");

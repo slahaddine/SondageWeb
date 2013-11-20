@@ -1,4 +1,4 @@
-<div id="menu">
+  <div id="menu">
     <ul>
         <li class="current_page_item" id="acceuil">
             <a href="index.jsp?action=1" id="acceuil">Acceuil</a></li>

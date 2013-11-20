@@ -1,4 +1,4 @@
-<div id="content">
+ <div id="content">
     <!-- end #content -->
     <form action="index.jsp?action=7" method="POST">
         <table>

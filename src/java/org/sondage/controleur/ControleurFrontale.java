@@ -50,7 +50,7 @@ public class ControleurFrontale extends HttpServlet {
            request.setAttribute("sondageDate", request.getParameter("sondageDate"));
            request.setAttribute("sondageDescription", request.getParameter("sondageDescription"));
            request.setAttribute("sondageOtherName", request.getParameter("sondageOtherName"));
-           rs.forward(request, response);
+           rs.forward(request, response);  
        }
     }
 

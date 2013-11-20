@@ -1,4 +1,4 @@
-<%@page import="org.sondage.modele.Sondage"%>
+ <%@page import="org.sondage.modele.Sondage"%>
 <div id="content">
     <!-- end #content -->
     <% 

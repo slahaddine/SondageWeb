@@ -1,4 +1,4 @@
-<div id="content">
+ <div id="content">
     <div class="post">
         <h2 class="title"><a href="#">Bienvenue à Sonadge Web</a></h2>
         <p class="meta">Posted by <a href="#">Someone</a> on July 08, 2013

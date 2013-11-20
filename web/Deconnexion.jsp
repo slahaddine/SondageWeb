@@ -1,4 +1,4 @@
 <% 
 session.invalidate();
-pageContext.forward("/index.jsp?action=1");
+pageContext.forward("/index.jsp?action=1"); 
 %>

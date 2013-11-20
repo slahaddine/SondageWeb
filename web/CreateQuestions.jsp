@@ -1,4 +1,4 @@
-<%@page import="org.sondage.config.Config"%>
+ <%@page import="org.sondage.config.Config"%>
 <%@page import="org.sondage.modele.Questionnaire"%>
 <%@page import="org.sondage.modele.Sondage"%>
 <div id="content">

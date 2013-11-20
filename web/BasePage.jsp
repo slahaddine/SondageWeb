@@ -1,4 +1,4 @@
-<div id="page-bgbtm">
+ <div id="page-bgbtm">
     <div id="content">
 
         <div style="clear: both;">&nbsp;</div>

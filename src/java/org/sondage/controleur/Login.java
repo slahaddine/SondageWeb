@@ -57,7 +57,7 @@ public class Login extends HttpServlet {
             Sondage sondage2 = new Sondage("Yanis", "description banale 2", "Sofiane"); 
             List<Sondage> listSondage = new ArrayList<Sondage>();
             listSondage.add(sondage1);
-            listSondage.add(sondage2); 
+            listSondage.add(sondage2);  
             session.setAttribute("listSondages", listSondage);
             
         }else{

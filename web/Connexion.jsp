@@ -7,7 +7,7 @@
                 <input type="text" name="username"/>
             </p>
             <p>
-                Password&nbsp;:&nbsp;    
+                Password&nbsp;:&nbsp;     
                 <input type="password" name="password"/>
             </p>
             <input type="hidden" name="login" value="login"/>
