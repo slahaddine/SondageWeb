@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
 
-public class QuestionDAO extends DAO<Question> {
+public class QuestionDAO extends DAO<Choix> {
 
 	public QuestionDAO(Connection c)
 	{
@@ -15,11 +15,11 @@ public class QuestionDAO extends DAO<Question> {
 	}
         
 	@Override
-	public boolean create(Question x) {
+	public boolean create(Choix x) {
 		// TODO Auto-generated method stub
 	
 		String req = "INSERT INTO question (`NOMQUESTION` , `TEXTEQUESTION` , `IDQUESTIONNAIRE`) "+
-			     "VALUES ('"+x.getNomQuestion()+"','"+x.getTexteQuestion()+"','"+x.getIdQuestionnaire()+"')";
+			     "VALUES ('";//+x.getNomQuestion()+"','"+x.getTexteQuestion()+"','"+x.getIdQuestionnaire()+"')";
 
 		//System.out.println("REQUETE "+req);
 
@@ -52,13 +52,13 @@ public class QuestionDAO extends DAO<Question> {
 	}
         
 	@Override
-	public boolean delete(Question x) {
+	public boolean delete(Choix x) {
 		// TODO Auto-generated method stub
 		Statement stm = null;
 		try 
 		{
 			stm = cnx.createStatement(); 
-			int n= stm.executeUpdate("DELETE FROM question WHERE idquestion='"+x.getIdQuestion()+"'");
+			int n= stm.executeUpdate("DELETE FROM question WHERE idquestion='");//+x.getIdQuestion()+"'");
 			if (n>0)
 			{
 				stm.close();
@@ -82,7 +82,7 @@ public class QuestionDAO extends DAO<Question> {
 	}
 
 	@Override
-	public Question read(String id) {
+	public Choix read(String id) {
 		// TODO Auto-generated method stub
                 Statement stm = null;
                 ResultSet r = null;
@@ -92,13 +92,13 @@ public class QuestionDAO extends DAO<Question> {
 			r = stm.executeQuery("SELECT * FROM question WHERE nomquestion = '"+id+"'");
 			if (r.next())
 			{
-				Question q = new Question(r.getString("nomquestion"),
+				/*Choix q = new Choix(r.getString("nomquestion"),
 						r.getString("textequestion"),
 						Integer.parseInt(r.getString("idquestionnaire")));
 				q.setIdQuestion(Integer.parseInt(r.getString("idquestion")));
                                 r.close();
 				stm.close();
-				return q;
+				return q;*/
 			}
 		}
 		catch (SQLException exp)
@@ -119,15 +119,16 @@ public class QuestionDAO extends DAO<Question> {
 	}
 
 	@Override
-	public boolean update(Question x) {
+	public boolean update(Choix x) {
 		// TODO Auto-generated method stub
 		Statement stm = null;
 		try 
 		{
-			String req = "UPDATE questionnaire SET NOMQUESTION = '"+x.getNomQuestion()+"',"+
+			String req = "UPDATE questionnaire SET NOMQUESTION = ";
+                        /*+x.getNomQuestion()+"',"+
                                                         "TEXTEQUESTION = '"+x.getTexteQuestion()+"'," +
                                                         "IDQUESTIONNAIRE = '"+x.getIdQuestionnaire()+"'," +
-							" WHERE IDQUESTION = '"+x.getIdQuestion()+"'";
+							" WHERE IDQUESTION = '"+x.getIdQuestion()+"'";*/
 			//System.out.println("REQUETE "+req);
 			stm = cnx.createStatement(); 
 			int n= stm.executeUpdate(req);
@@ -153,20 +154,20 @@ public class QuestionDAO extends DAO<Question> {
 		return false;
 	}
 	@Override
-	public List<Question> findAll() {
+	public List<Choix> findAll() {
 		// TODO Auto-generated method stub
-		List<Question> liste = new LinkedList<Question>();
+		List<Choix> liste = new LinkedList<Choix>();
 		try 
 		{
 			Statement stm = cnx.createStatement(); 
 			ResultSet r = stm.executeQuery("SELECT * FROM question");
 			while (r.next())
 			{
-				Question q = new Question(r.getString("nomquestion"),
+				/*Choix q = new Choix(r.getString("nomquestion"),
 						r.getString("textequestion"),
 						Integer.parseInt(r.getString("idquestionnaire")));
                                 q.setIdQuestion(Integer.parseInt(r.getString("idquestion")));
-				liste.add(q);
+				liste.add(q);*/
 			}
 			r.close();
 			stm.close();
@@ -178,7 +179,7 @@ public class QuestionDAO extends DAO<Question> {
 	}
         
     @Override
-    public Question read(int id) {
+    public Choix read(int id) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

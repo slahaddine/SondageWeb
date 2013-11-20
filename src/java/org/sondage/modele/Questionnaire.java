@@ -9,12 +9,12 @@ package org.sondage.modele;
  * @author Usager
  */
 public class Questionnaire {
-    private Question[] questions; 
+    private Choix[] choix; 
     private int nbQuestions, currentQuestion, idQuestionnaire; 
     private String nomSondage; 
     private String theQuestion; 
     public Questionnaire(int nbQuestion, String _nomSondage, String _theQuestion) {
-        questions = new Question[nbQuestion]; 
+        choix = new Choix[nbQuestion]; 
         currentQuestion = 0; 
         nomSondage = _nomSondage; 
         this.nbQuestions = nbQuestion; 
@@ -29,15 +29,15 @@ public class Questionnaire {
         this.theQuestion = theQuestion;
     }
     
-    public Question getQuestion(int i){
+    public Choix getChoix(int i){
         if((i >= 0) && (i < nbQuestions))
-            return questions[i];
+            return choix[i];
         else 
             return null; 
     }
-    public boolean addQuestion(Question _question){
+    public boolean addChoix(Choix _question){
         if (currentQuestion <= nbQuestions){
-            questions[currentQuestion] = _question;
+            choix[currentQuestion] = _question;
             currentQuestion++;
             return true; 
         }else 
@@ -51,9 +51,9 @@ public class Questionnaire {
         this.idQuestionnaire = idQuestionnaire;
     }
     
-    public boolean setQuestion(Question questionToAdd){
+    public boolean setChoix(Choix questionToAdd){
         if((currentQuestion >= 0) && (currentQuestion < nbQuestions)){
-            questions[currentQuestion] = questionToAdd; 
+            choix[currentQuestion] = questionToAdd; 
             currentQuestion++; 
             return true; 
         }

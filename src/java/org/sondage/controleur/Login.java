@@ -8,6 +8,8 @@ import org.sondage.modele.Connexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -16,6 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import org.sondage.modele.Sondage;
 //import org.apache.catalina.Session;
 import org.sondage.modele.User; 
 import org.sondage.modele.UserDAO;
@@ -49,6 +52,13 @@ public class Login extends HttpServlet {
             session.setAttribute("username", username);
             session.setAttribute("connexion", "true");
             session.setAttribute("connectedUser", dao.read(username));
+            String nomAuteur = "Sofiane"; 
+            Sondage sondage1 = new Sondage(nomAuteur, "description banale", "Yanis"); 
+            Sondage sondage2 = new Sondage("Yanis", "description banale 2", "Sofiane"); 
+            List<Sondage> listSondage = new ArrayList<Sondage>();
+            listSondage.add(sondage1);
+            listSondage.add(sondage2); 
+            session.setAttribute("listSondages", listSondage);
             
         }else{
             

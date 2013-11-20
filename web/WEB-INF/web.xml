@@ -12,6 +12,10 @@
         <servlet-name>Inscription</servlet-name>
         <servlet-class>org.sondage.controleur.Inscription</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TestSondage</servlet-name>
+        <servlet-class>org.sondage.controleur.TestSondage</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ControleurFrontale</servlet-name>
         <url-pattern>*.do</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Inscription</servlet-name>
         <url-pattern>/inscription</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TestSondage</servlet-name>
+        <url-pattern>/TestSondage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
